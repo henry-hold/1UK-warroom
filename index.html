@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK War Room</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="login-screen" id="login-screen">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="validateLogin()">Enter</button>
+        <p id="login-error"></p>
+    </div>
+
+    <div id="dashboard" class="hidden">
+        <header>
+            <h1>WAR ROOM</h1>
+            <label class="switch">
+                <input type="checkbox" id="siren-toggle">
+                <span class="slider"></span> Siren
+            </label>
+        </header>
+        <main>
+            <section class="map">
+                <h2>Live Threat Map</h2>
+                <div id="map" style="height: 400px;"></div>
+            </section>
+            <section class="risk">
+                <h2>Live War Risk Trend</h2>
+                <canvas id="riskChart" width="400" height="200"></canvas>
+            </section>
+        </main>
+        <section class="news">
+            <h2>Live News Feed</h2>
+            <ul id="newsFeed"></ul>
+        </section>
+        <footer>
+            <button onclick="sendAlert()">Send SMS Alert</button>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
